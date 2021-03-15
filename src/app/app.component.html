@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="title">
+    <h1>Task Tracker</h1>
+    <h4>v2.0</h4>
+  </div>
+  <div class="content">
+    <div class="create-task">
+      <h2>Create a Task</h2>
+      <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+        <label>
+          Task Name:
+          <input type="text" formControlName="name">
+        </label>
+        <label>
+          Date:
+          <input type="text" formControlName="date">
+        </label>
+        <label>
+          Assigned To:
+          <input type="text" formControlName="assigned">
+        </label>
+        <button type="submit" [disabled]="!taskForm.valid">Submit</button>
+      </form>
+    </div>
+    <div class="task-list">
+      <h2>Existing Tasks</h2>
+      <div class="task">
+        <ul style="list-style-type: none;">
+          <li *ngFor="let task of tasks">
+            {{task.name}}
+            {{task.date}}
+            {{task.assigned}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
