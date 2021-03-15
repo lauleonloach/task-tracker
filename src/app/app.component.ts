@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {taskList} from './model/taskList';
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-root',
@@ -20,11 +21,18 @@ export class AppComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   addTask = function() {
-    this.tasks.unshift(this.taskForm.value);
+    let task = this.taskForm.value;
+    Object.assign(task, {id: this.tasks.length + 1});
+    this.tasks.unshift(task);
+  }
+
+  removeTask = function(id) {
+    const taskToRemove = _.find(this.tasks, task => task.id === id);
+    const index = this.tasks.indexOf(taskToRemove);
+    
+    this.tasks.splice(index, 1);
   }
 }

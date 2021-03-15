@@ -1,0 +1,83 @@
+input[type=text] {
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.submit {
+    padding: 8px 12px;
+}
+
+.container {
+    border: 6px solid #ccc;
+}
+
+.task-input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-input {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    padding-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.task {
+    border: 5px solid #eee;
+    border-radius: 5px;
+}
+
+.create-task {
+    flex: 1;
+    border-right: 3px solid #ccc;
+    margin-right: 50px;
+}
+
+.task-list {
+    flex: 1;
+}
+
+.existing-tasks {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.existing-tasks:nth-child(odd) {
+    background-color: #fff;
+}
+
+.existing-tasks:nth-child(even) {
+    background-color: #eee;
+}
+
+h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+.title {
+    padding: 20px;
+    background-color: #eee;
+}
+
+.remove-task {
+    border: none;
+    background-color: inherit;
+}
